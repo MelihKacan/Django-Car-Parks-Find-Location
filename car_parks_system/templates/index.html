@@ -1,0 +1,44 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../static/CSS/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+              $.get("{% url 'all_car_parks_api'%}", function(data, status){
+                var _text = '';
+                alert("Data: " + data + "\nStatus: " + status);
+                data.forEach(function(blog) {
+                    _text += '<div class="blog-item">';
+                    _text += '<h2>' + blog.id + blog.name + '</h2>';
+                    _text += '</div>';
+                });
+                $("#blogs").html(_text);
+              });
+            });
+          });
+    </script>
+
+</head>
+<body class="site-background">
+    <div>
+      
+        <a href="/"><p class="site-h1-mobile">Blog Website</p></a>
+
+        <h1 id="blogs" class="site-all-blogs"></h1>
+
+        <button id="button">CLICK</button>
+    </div>
+</body>
+</html>
+

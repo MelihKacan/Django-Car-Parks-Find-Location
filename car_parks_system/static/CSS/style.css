@@ -1,0 +1,51 @@
+  .site-p-mobile{
+  font-size: 12pt;
+  color:gray;
+  }
+
+  .site-h1-mobile{
+  font-size: 18pt;
+  color:white;
+  text-align: center;
+  }
+
+  .site-background{
+  background-color:rgb(54, 54, 54);
+  }
+
+  .site-all-blogs{
+  color:white;
+  }
+
+  a{
+  text-decoration: none;
+  color: white;
+  }
+
+  .topnav {
+  overflow: hidden;
+  background-color: #000000;
+  }
+
+  .topnav a {
+  float: left;
+  color: #aaaaaa;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  }
+
+  .topnav a:hover {
+  background-color: #616161;
+  color: rgb(199, 199, 199);
+  }
+
+  .topnav a.active {
+  background-color: #241055;
+  color: white;
+  }
+
+body{
+  margin:0;
+}
