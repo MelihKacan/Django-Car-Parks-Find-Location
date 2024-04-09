@@ -28,6 +28,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1',"192.168.42.78"]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Frontend uygulamanızın adresi
+    "http://127.0.0.1:3000",
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
 
 # Application definition
 
@@ -41,7 +55,8 @@ INSTALLED_APPS = [
     "rest_framework",
     "all_api",
     "phone_field",
-    'rest_framework.authtoken'
+    'rest_framework.authtoken',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +67,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = "car_parks_system.urls"
@@ -143,3 +159,5 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.JSONParser',
     ],  
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
