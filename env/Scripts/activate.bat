@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Files_Desktop\Python\KocaFest\api\env
+set VIRTUAL_ENV=C:\Files_Desktop\Python\KocaFest\car_parks_find_system\env
 
 if not defined PROMPT set PROMPT=$P$G
 

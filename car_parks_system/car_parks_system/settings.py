@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-uax808w6grswysj!ebr4c4sl+o#rzh8^&x1jni(p(4%y6cfn4^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.230.35"]
+ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1',"192.168.42.78"]
 
 
 # Application definition
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "all_api"
+    "all_api",
+    "phone_field",
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+AUTH_USER_MODEL = "all_api.CustomUser"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+    ],  
+}
